@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowLeft, Download, Eye, X } from "lucide-react"
+import * as Recharts from 'recharts'
+import { ChartContainer, ChartTooltip, ChartLegend } from '@/components/ui/chart'
 import {
   Dialog,
   DialogTrigger,
@@ -120,28 +122,185 @@ export default function BiogasWindPage() {
           <h2 className="text-2xl font-semibold mb-4">Detailed Explanation</h2>
           <ul className="list pl-8 text-foreground mb-4">
             <li>
-              Here is the explanation for the Hybrid Renewable Energy System diagram: <br />
+              Case Study: Hybrid Biogas-Wind System for Off-Grid Rural Health Clinic <br />
               <br />
 
-                  This system utilizes two sources of energy: Biogas and Wind Energy. Biogas is produced from organic waste (like animal manure or agricultural residue) via anaerobic digestion, offering a reliable, on-demand fuel source. Wind energy is captured by a turbine, providing clean power when wind conditions are favorable.
-                  <br />
-                  <br />
+                  1. Energy Demand Assessment (Output/Utilization)
 
-                  The conversion process involves several steps. The wind turbine generates AC power, which is typically converted to DC via a rectifier in the Wind Energy Converter. The Biogas is combusted in an Engine/Generator to produce AC power, which is often rectified to DC or directly fed to the DC Bus depending on the system design. All sources feed into a central DC Bus. An Inverter then converts the stored DC power back into stable AC power for the loads. Crucially, a Battery Bank stores excess energy, stabilizing the supply and allowing the system to power the clinic when neither the wind nor the biogas generator is running.
+                    A primary rural health clinic requires reliable power for critical functions 24/7. The average daily electrical demand for a typical rural clinic is estimated to be around 20 to 25 kWh/day.
+
             </li>
           </ul>
-          <ul className="list pl-8 text-foreground mb-4">
-            <li>
-              
-
-                  The output/utilization is the delivery of stable, reliable AC power to the rural health clinic's Critical Loads (e.g., medical equipment, lighting, refrigeration) and Non-Critical Loads (e.g., staff quarters).
-                  <br />
-                  <br />
-
-                  The real-world application relevance is high, especially for off-grid communities. This hybrid approach overcomes the intermittency of single renewable sources (wind only or solar only). By combining the variable, clean energy from wind with the controllable, dispatchable power from biogas, the system ensures a high level of energy security and quality, which is vital for operating life-saving medical equipment in a rural health clinic.
-            </li>
-          </ul>
+          
         </div>
+
+        {/* Load & Energy Table */}
+        <div className="glass-panel p-6 mb-8 glow-accent">
+          <h3 className="text-lg font-semibold text-primary mb-3">Load & Estimated Energy</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead>
+                <tr className="text-xs text-muted-foreground">
+                  <th className="px-3 py-2">Load Category</th>
+                  <th className="px-3 py-2">Key Appliances</th>
+                  <th className="px-3 py-2">Power Rating (W)</th>
+                  <th className="px-3 py-2">Operating Hours (h/day)</th>
+                  <th className="px-3 py-2">Energy Required (kWh/day)</th>
+                  <th className="px-3 py-2">Reliability</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="px-3 py-2 align-top">Critical</td>
+                  <td className="px-3 py-2">Vaccine Refrigerator</td>
+                  <td className="px-3 py-2">80</td>
+                  <td className="px-3 py-2">24</td>
+                  <td className="px-3 py-2">1.92</td>
+                  <td className="px-3 py-2">24/7</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">Emergency/Operating Lights</td>
+                  <td className="px-3 py-2">300</td>
+                  <td className="px-3 py-2">4</td>
+                  <td className="px-3 py-2">1.20</td>
+                  <td className="px-3 py-2">24/7</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">Diagnostic Equipment</td>
+                  <td className="px-3 py-2">500</td>
+                  <td className="px-3 py-2">2</td>
+                  <td className="px-3 py-2">1.00</td>
+                  <td className="px-3 py-2">24/7</td>
+                </tr>
+                <tr className="font-medium border-t">
+                  <td className="px-3 py-2">&nbsp;</td>
+                  <td className="px-3 py-2">Subtotal Critical Load</td>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">4.12</td>
+                  <td className="px-3 py-2" />
+                </tr>
+
+                <tr className="border-t">
+                  <td className="px-3 py-2">Non-Critical</td>
+                  <td className="px-3 py-2">General Lighting (LED)</td>
+                  <td className="px-3 py-2">500</td>
+                  <td className="px-3 py-2">12</td>
+                  <td className="px-3 py-2">6.00</td>
+                  <td className="px-3 py-2">Day/Evening</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">Fans/Ventilation</td>
+                  <td className="px-3 py-2">400</td>
+                  <td className="px-3 py-2">12</td>
+                  <td className="px-3 py-2">4.80</td>
+                  <td className="px-3 py-2">Day</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">Water Pump</td>
+                  <td className="px-3 py-2">750</td>
+                  <td className="px-3 py-2">1</td>
+                  <td className="px-3 py-2">0.75</td>
+                  <td className="px-3 py-2">On-demand</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">Office Equipment/Charging</td>
+                  <td className="px-3 py-2">250</td>
+                  <td className="px-3 py-2">8</td>
+                  <td className="px-3 py-2">2.00</td>
+                  <td className="px-3 py-2">Day</td>
+                </tr>
+                <tr className="font-medium border-t">
+                  <td className="px-3 py-2">&nbsp;</td>
+                  <td className="px-3 py-2">Subtotal Non-Critical Load</td>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">13.55</td>
+                  <td className="px-3 py-2" />
+                </tr>
+
+                <tr className="border-t font-semibold">
+                  <td className="px-3 py-2">&nbsp;</td>
+                  <td className="px-3 py-2">Total Estimated Daily Demand</td>
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2" />
+                  <td className="px-3 py-2">≈17.67 kWh/day</td>
+                  <td className="px-3 py-2" />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div className="glass-panel p-8 mb-12 glow-accent">
+
+        <h2 className="text-2xl font-semibold mb-4">Detailed Explanation</h2>
+        <ul className="list pl-8 text-foreground mb-4">
+          <li>
+            2. System Sizing and Component Data (Source & Conversion Process)
+            <br />
+            <br />
+            To meet the target of ≈22 kWh/day with high reliability, the system is designed as a hybrid microgrid.
+          </li>
+        </ul>
+
+        <h3 className="text-lg font-semibold text-primary mb-3">Component Sizing & CAPEX</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm text-left border-collapse">
+            <thead>
+              <tr className="text-xs text-muted-foreground">
+          <th className="px-3 py-2">Component</th>
+          <th className="px-3 py-2">Function (Conversion Process)</th>
+          <th className="px-3 py-2">Archetypal Size/Capacity</th>
+          <th className="px-3 py-2">Archetypal Cost (Capital)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t">
+          <td className="px-3 py-2">Biogas Source</td>
+          <td className="px-3 py-2">Dispatchable Baseload (Waste → Gas → Electricity)</td>
+          <td className="px-3 py-2">5 kW Biogas Generator</td>
+          <td className="px-3 py-2">USD 6,000</td>
+              </tr>
+              <tr>
+          <td className="px-3 py-2">Wind Energy</td>
+          <td className="px-3 py-2">Variable Clean Power (Kinetic → Electricity)</td>
+          <td className="px-3 py-2">2 kW Wind Turbine</td>
+          <td className="px-3 py-2">USD 5,000</td>
+              </tr>
+              <tr>
+          <td className="px-3 py-2">Storage</td>
+          <td className="px-3 py-2">Energy Buffer & Backup (DC storage)</td>
+          <td className="px-3 py-2">500 Ah Battery Bank (48V)</td>
+          <td className="px-3 py-2">USD 4,000</td>
+              </tr>
+              <tr>
+          <td className="px-3 py-2">Power Electronics</td>
+          <td className="px-3 py-2">AC/DC Conversion & Control</td>
+          <td className="px-3 py-2">5 kW Inverter/Charger</td>
+          <td className="px-3 py-2">USD 2,500</td>
+              </tr>
+              <tr className="border-t font-semibold">
+          <td className="px-3 py-2">Total Estimated Initial Cost (CAPEX)</td>
+          <td className="px-3 py-2" />
+          <td className="px-3 py-2" />
+          <td className="px-3 py-2">≈USD 17,500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+            </div>
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mb-12">

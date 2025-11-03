@@ -95,26 +95,134 @@ export default function WaveDesalPage() {
           <h2 className="text-2xl font-semibold mb-4">Detailed Explanation</h2>
           <ul className="list pl-8 text-foreground mb-4">
             <li>
-              Here is the explanation for the Hybrid Renewable Energy System diagram: <br />
+              Case Study: Autonomous Wave-Powered Reverse Osmosis (RO) Desalination <br />
               <br />
 
-                  The Source of Energy is the kinetic and potential energy of ocean waves, a high-density, predictable, and clean resource prevalent along many coastlines.
+                  This case study models an autonomous, off-grid Wave Energy Converter (WEC) system designed to power a small-scale coastal desalination facility for a community or resort, focusing on the high-energy demands of the Reverse Osmosis (RO) process.
                   <br />
                   <br />
 
-                  The Conversion Process begins with the Wave Energy Converter (WEC) Array, which captures wave motion and translates it into mechanical or hydraulic power. The Power Take-Off (PTO) System converts this raw energy into stable electrical power, which is then regulated by Power Conditioning circuitry and a Battery Bank for energy storage. This storage is crucial as it stabilizes the intermittent wave power, providing a steady electrical supply required for reliable plant operation.
+                  1. Energy Requirement and Water Demand (Output/Utilization)
+
+                  The most energy-intensive component is the Reverse Osmosis (RO) unit. Modern Seawater RO plants, especially with energy recovery devices, have reduced energy consumption significantly.
             </li>
           </ul>
+
+
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm">
+              <caption className="text-xs text-muted-foreground pb-2">
+                Archetypal sizing for wave-powered desalination
+              </caption>
+              <thead>
+                <tr className="bg-muted/50">
+                  <th className="px-4 py-3 text-left text-foreground border-b border-border w-[28%]">Metric</th>
+                  <th className="px-4 py-3 text-left text-foreground border-b border-border w-[42%]">Value (Archetypal Data)</th>
+                  <th className="px-4 py-3 text-left text-foreground border-b border-border w-[30%]">Utilization Goal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    Target Daily Water Production
+                  </td>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    1,000 m<sup>3</sup>/day (approx. 264,000 US gallons/day)
+                  </td>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    Sufficient for a small town or a large industrial complex.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    Specific Energy Consumption (SEC) of RO
+                  </td>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    3.0 kWh/m<sup>3</sup> (state‑of‑the‑art SWRO)
+                  </td>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    The energy needed to produce one unit of fresh water.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    Total Daily Energy Demand
+                  </td>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    1,000 m<sup>3</sup>/day × 3.0 kWh/m<sup>3</sup> = 3,000 kWh/day
+                  </td>
+                  <td className="px-4 py-3 align-top border-b border-border">
+                    The required output from the wave energy system.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 align-top">
+                    Required Power Rating
+                  </td>
+                  <td className="px-4 py-3 align-top">
+                    3,000 kWh/day ÷ 24 h ≈ 125 kW (continuous)
+                  </td>
+                  <td className="px-4 py-3 align-top">
+                    The minimum power capacity needed from the WEC array.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <ul className="list pl-8 text-foreground mb-4">
             <li>
-              Here is the explanation for the Hybrid Renewable Energy System diagram: <br />
+              2. System Sizing and Conversion Data
+
+                The system must convert the mechanical energy of the waves into a stable, high-quality electrical source required by the RO pumps. <br />
               <br />
 
-                  TThe primary Output/Utilization is powering the Desalination Plant, which typically uses Reverse Osmosis (RO). The plant draws seawater and utilizes the conditioned electrical power to force water through membranes, yielding Freshwater for community distribution and discharging a concentrated saltwater Brine Discharge back to the sea.
-                  <br />
-                  <br />
-
-                  The Real-World Application Relevance is high for coastal communities suffering from water scarcity. This system provides a carbon-free, localized solution that achieves water security and energy independence by eliminating reliance on fossil fuels or centralized grids. By linking a clean, consistent ocean resource directly to an essential need (potable water), it offers a sustainable model for remote island and coastal development.
+                  <div className="overflow-x-auto mb-6">
+                    <table className="w-full text-sm">
+                      <caption className="text-xs text-muted-foreground pb-2">
+                        System components, sizing, and archetypal CAPEX
+                      </caption>
+                      <thead>
+                        <tr className="bg-muted/50">
+                          <th className="px-4 py-3 text-left text-foreground border-b border-border">Component</th>
+                          <th className="px-4 py-3 text-left text-foreground border-b border-border">Function (Conversion Process)</th>
+                          <th className="px-4 py-3 text-left text-foreground border-b border-border">Archetypal Size/Capacity</th>
+                          <th className="px-4 py-3 text-left text-foreground border-b border-border">Archetypal Capital Cost (CAPEX)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="px-4 py-3 align-top border-b border-border">WEC Array (Source)</td>
+                          <td className="px-4 py-3 align-top border-b border-border">Captures wave motion (e.g., Point Absorber type)</td>
+                          <td className="px-4 py-3 align-top border-b border-border">5×50 kW WEC Units (Rated 250 kW Total)</td>
+                          <td className="px-4 py-3 align-top border-b border-border">USD 2,000,000</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 align-top border-b border-border">Power Take-Off (PTO)</td>
+                          <td className="px-4 py-3 align-top border-b border-border">Converts wave motion to electrical/hydraulic power</td>
+                          <td className="px-4 py-3 align-top border-b border-border">Hydraulic pump/Generator sets</td>
+                          <td className="px-4 py-3 align-top border-b border-border">Included in WEC CAPEX</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 align-top border-b border-border">Battery Bank</td>
+                          <td className="px-4 py-3 align-top border-b border-border">Stabilizes intermittent wave power; provides surge capacity</td>
+                          <td className="px-4 py-3 align-top border-b border-border">1,500 kWh storage capacity</td>
+                          <td className="px-4 py-3 align-top border-b border-border">USD 450,000</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 align-top border-b border-border">Power Conditioning</td>
+                          <td className="px-4 py-3 align-top border-b border-border">Regulates voltage/frequency for Desalination Plant</td>
+                          <td className="px-4 py-3 align-top border-b border-border">200 kW Inverter/Rectifier</td>
+                          <td className="px-4 py-3 align-top border-b border-border">USD 50,000</td>
+                        </tr>
+                        <tr>
+                          <td className="px-4 py-3 align-top font-medium">Total Estimated Initial Cost (CAPEX)</td>
+                          <td className="px-4 py-3 align-top"></td>
+                          <td className="px-4 py-3 align-top"></td>
+                          <td className="px-4 py-3 align-top font-medium">≈USD 2,500,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
             </li>
           </ul>
         </div>

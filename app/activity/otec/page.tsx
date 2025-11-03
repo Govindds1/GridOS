@@ -97,25 +97,91 @@ export default function OTECPage() {
           <h2 className="text-2xl font-semibold mb-4">Detailed Explanation</h2>
           <ul className="list pl-8 text-foreground mb-4">
             <li>
-              Here is the explanation for the Hybrid Renewable Energy System diagram: <br />
+              Case Study: Ocean Thermal Energy Conversion (OTEC) for Dual Output in a Tropical Island Nation <br />
               <br />
-
-                  The Source of Energy for the OTEC system is the thermal gradient of the ocean—the constant temperature difference (≈20∘C) between warm surface seawater and cold deep seawater (from ≈1000m depth). This makes OTEC a reliable, baseload renewable source, unlike intermittent solar or wind.
-                  <br />
-                  <br />
-
-                  The Conversion Process illustrated here is a Closed-Cycle OTEC. The Evaporator uses the warm water to vaporize a low-boiling-point working fluid (like ammonia). This high-pressure vapor drives the Turbine to produce mechanical power, which is converted to Electricity Production. The vapor is then condensed back to a liquid by the cold deep seawater in the Condenser. Crucially, the cold water can also be used in a separate Flash Distillation unit to create a vacuum, boiling the warm seawater to produce steam that yields Freshwater Generation.
+                  This case study models a proposed 10 MW Hybrid OTEC Plant designed to provide baseload power and potable water for a small tropical island community, thereby addressing critical energy and water security challenges.
             </li>
           </ul>
+
+              <h3 className="text-lg font-semibold mb-4">Key Parameters</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="border-b border-border text-muted-foreground">
+                    <tr>
+                      <th className="text-left py-2 px-3">Parameter</th>
+                      <th className="text-left py-2 px-3">Value (Archetypal Data)</th>
+                      <th className="text-left py-2 px-3">Role in System</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    <tr>
+                      <td className="py-3 px-3 font-medium">Source ΔT</td>
+                      <td className="py-3 px-3">≈20 °C (Warm Surface: 26 °C, Cold Deep: 6 °C)</td>
+                      <td className="py-3 px-3">Drives the thermodynamic (Rankine) cycle.</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium">Deep Cold Water Intake</td>
+                      <td className="py-3 px-3">≈1000 m depth</td>
+                      <td className="py-3 px-3">Provides the heat sink for the condenser.</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium">System Type</td>
+                      <td className="py-3 px-3">Hybrid-Cycle OTEC</td>
+                      <td className="py-3 px-3">Combines Closed Cycle (electricity) and Open Cycle (water).</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium">Capacity Factor</td>
+                      <td className="py-3 px-3">≈90%</td>
+                      <td className="py-3 px-3">Indicates 24/7 operation (vs. ≈30% for wind/solar).</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium">Water Flow Rate (Gross)</td>
+                      <td className="py-3 px-3">≈3 m<sup>3</sup>/s per MW net (high flow rate is necessary)</td>
+                      <td className="py-3 px-3">Water volume needed to drive the heat exchangers.</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+
+
           <ul className="list pl-8 text-foreground mb-4">
             <li>
               
 
-                  The Output/Utilization is multi-functional: reliable Electricity, potable Freshwater, and Nutrient-Rich Deep Seawater. This nutrient-rich output is invaluable for sustaining mariculture (aquaculture) or specialized cooling systems.
+                  2. Output and Utilization Metrics
+
+                The multi-functional output allows the OTEC system to generate multiple revenue streams and deliver high societal value.
                   <br />
                   <br />
 
-                  The Real-World Application Relevance is significant for tropical island nations and coastal regions lacking fresh water or reliable power. By simultaneously providing 24/7 power and desalinated water, OTEC addresses two critical infrastructure challenges, supporting public health, agriculture, and economic development in a sustainable, carbon-free manner.
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead className="border-b border-border text-muted-foreground">
+                        <tr>
+                          <th className="text-left py-2 px-3">Metric</th>
+                          <th className="text-left py-2 px-3">Calculation / Value</th>
+                          <th className="text-left py-2 px-3">Utilization Benefit</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border">
+                        <tr>
+                          <td className="py-3 px-3 font-medium">Net Electrical Output</td>
+                          <td className="py-3 px-3">10&nbsp;MW</td>
+                          <td className="py-3 px-3">Provides stable, baseload power for the island grid.</td>
+                        </tr>
+                        <tr>
+                          <td className="py-3 px-3 font-medium">Annual Energy Produced</td>
+                          <td className="py-3 px-3">10&nbsp;MW × 8,760&nbsp;h/yr × 0.90 (CF) = 78,840&nbsp;MWh/year</td>
+                          <td className="py-3 px-3">Sufficient to power ≈15,000 to 20,000 homes.</td>
+                        </tr>
+                        <tr>
+                          <td className="py-3 px-3 font-medium">Levelized Cost of Energy (LCOE)</td>
+                          <td className="py-3 px-3">≈ USD&nbsp;0.15 to&nbsp;0.25/kWh (for commercial scale)</td>
+                          <td className="py-3 px-3">Competitive with high-cost island diesel generation (≈ USD&nbsp;0.35/kWh+).</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
             </li>
           </ul>
         </div>
